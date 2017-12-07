@@ -1,4 +1,53 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewData["Title"]</h2>
+<section class="content-header">
+    <h1>
+        @ViewData["Title"]
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Home"><i class="fa fa-dashboard"></i> Permit</a></li>
+    </ol>
+</section>
+<section class="content">
+    <div id="smartwizard" class="sw-main sw-theme-arrows">
+        <ul class="nav nav-tabs step-anchor">
+            <li class="active"><a href="#step-1">Step 1<br><small>Submit Documents</small></a></li>
+            <li class=""><a href="#step-2">Step 2<br><small>Submit Tax Bill</small></a></li>
+            <li class=""><a href="#step-3">Step 3<br><small>Verification of Tax Bill</small></a></li>
+            <li class=""><a href="#step-4">Step 4<br><small>Final Approval</small></a></li>
+        </ul>
+        <div>
+            <div id="step-1" class="content-header">
+                If business has operated for at least one year and the current assesstment period is for the first quarter of the current year, Present the duly accomplished Sales Declaration & Evaluation Form (SDEF) with complete documentary requirements.
+            </div>
+
+        </div>
+
+
+        <nav class="navbar btn-toolbar sw-toolbar sw-toolbar-bottom"><div class="btn-group navbar-btn sw-btn-group-extra pull-right" role="group"><button class="btn btn-info">Finish</button><button class="btn btn-danger">Cancel</button></div><div class="btn-group navbar-btn sw-btn-group pull-right" role="group"><button class="btn btn-default sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-default sw-btn-next" type="button">Next</button></div></nav>
+    </div>
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#doc-form" data-toggle="tab" aria-expanded="true">Form</a></li>
+            <li class=""><a href="#doc-req" data-toggle="tab" aria-expanded="false">Requirements</a></li>
+        </ul>
+        <div class="tab-content">
+            <!-- Font Awesome Icons -->
+            <div class="tab-pane active" id="doc-form">
+
+                @Html.Partial("Forms/_BussPermitApplication")
+
+
+            </div>
+            <!-- /#fa-icons -->
+            <!-- glyphicons-->
+            <div class="tab-pane" id="doc-req">
+                @Html.Partial("Req/_BussPermitApplication")
+            </div>
+            <!-- /#ion-icons -->
+
+        </div>
+        <!-- /.tab-content -->
+    </div>
+</section>
